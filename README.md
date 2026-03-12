@@ -40,7 +40,7 @@
 ![Корзина](screenshots/cart.png)
 
 ### Оповещение админу
-![оповещение](screenshots/message_admin)
+![оповещение](screenshots/message_admin.png)
 
 ### Админ-панель (/add)
 ![Админ добавление](screenshots/admin_add.png)
