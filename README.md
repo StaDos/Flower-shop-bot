@@ -24,6 +24,7 @@
 
   BOT_TOKEN=твой_токен_от_BotFather
   SPREADSHEET_ID=твой_id_таблицы
+  
 5. Положи credentials.json (Google Service Account) в корень
 6. `python main_bot.py`
 
