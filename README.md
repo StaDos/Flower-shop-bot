@@ -21,11 +21,11 @@
 1. Склонируй репозиторий
 2. `pip install -r requirements.txt`
 3. Создай `.env` в корне:
-   BOT_TOKEN=твой_токен_от_BotFather
-    SPREADSHEET_ID=твой_id_таблицы
-    ADMIN_IDS=123456789,987654321
-4. Положи credentials.json (Google Service Account) в корень
-5. `python main_bot.py`
+
+  BOT_TOKEN=твой_токен_от_BotFather
+  SPREADSHEET_ID=твой_id_таблицы
+5. Положи credentials.json (Google Service Account) в корень
+6. `python main_bot.py`
 
 ## Скриншоты
 
