@@ -1,5 +1,8 @@
 # Telegram Flower Shop Bot
 
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Бот-магазин для продажи рассады и цветов 🌹  
 Полноценный функционал: карусель товаров, корзина, оформление заказа, админ-панель для добавления/удаления товаров.
 
@@ -55,3 +58,7 @@
 
 ## Лицензия
 MIT — делай что хочешь, но оставь мой ник в копипасте
+
+## Связь
+Telegram: @Shdow_Key
+Mail: usertidebox38@proton.me
