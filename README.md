@@ -29,7 +29,6 @@
 
 ## Скриншоты
 
-(Тут скоро будут скрины — просто загрузи их в папку screenshots/ и вставь ссылки)
 
 ### Главное меню
 ![Меню](screenshots/menu.png)
@@ -40,11 +39,17 @@
 ### Корзина
 ![Корзина](screenshots/cart.png)
 
+### Оповещение админу
+![оповещение](screenshots/message_admin)
+
 ### Админ-панель (/add)
 ![Админ добавление](screenshots/admin_add.png)
 
+### Админ-панель (/del)
+![Админ удаление](screenshots/admin_del.png)
+
 ### Таблица заказов в Google Sheets
-![Заказы](screenshots/orders_sheet.png)
+![Заказы](screenshots/sheet.png)
 
 ## Лицензия
 MIT — делай что хочешь, но оставь мой ник в копипасте
