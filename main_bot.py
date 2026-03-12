@@ -15,8 +15,8 @@ CHANNEL = MAIN_CHANNEL_ID
 API_WEATHER = API_KEY
 API_LLM = API_KEY_LLM         # ← твой ключ от OpenRouter / Mistral / любого
 waiting_for_question = {}
-SPREADSHEET_ID = '1f6NqR2uBoRqLm4EhbuqA1Q0LNxIrO-nythY8TLeqiPI'
-CREDENTIALS_FILE = 'sheetmarket-12363ab675da.json'          # положи json рядом с ботом
+SPREADSHEET_ID = 'ваш id таблицы'
+CREDENTIALS_FILE = 'sheetmarket-*******.json'          # положи json рядом с ботом
 SHEET_CATALOG = 'Каталог'
 SHEET_ORDERS  = 'Замовлення'
 
@@ -31,7 +31,7 @@ spreadsheet = client.open_by_key(SPREADSHEET_ID)
 test_sheet = spreadsheet.worksheet(SHEET_CATALOG)
 print("Лист найден:", test_sheet.title)
 
-ADMIN_IDS = [7504177685]
+ADMIN_IDS = [123456789] #ваш id адмиа
 
 # Колонки
 COL_ID    = 1
@@ -332,7 +332,7 @@ def main_menu(message):
         InlineKeyboardButton("Запитати у адміна", callback_data="ask_mi"),
         InlineKeyboardButton("Запитати у ШІ 🤖", callback_data="ask_ai")
     )
-    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/kvitucha_mriya_info"))
+    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/канал"))
     bot.send_message(
         message.chat.id,
         "Обери розділ:",
@@ -363,9 +363,9 @@ def callback(call):
 
     elif data == "ask_mi":
         markup = InlineKeyboardMarkup()
-        markup.add(InlineKeyboardButton("Задати питання", url="https://t.me/Shdow_Key"))
+        markup.add(InlineKeyboardButton("Задати питання", url="https://t.me/админ"))
         markup.add(InlineKeyboardButton("До меню", callback_data="back"))
-        markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/kvitucha_mriya_info"))
+        markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/канал"))
         markup.add(InlineKeyboardButton("Каталог", callback_data="catalog"))
         bot.edit_message_text(
             "Ваша дія:",
@@ -378,14 +378,14 @@ def callback(call):
     elif data == "delivery":
         text = (
             "  🚚 ДОСТАВКА:\n\n"
-            "- Кропивницький:\n"
-            '  самовивіз або по домовленності тут 👉: url="https://t.me/Shdow_Key"\n\n'
+            "- Город:\n"
+            '  самовивіз або по домовленності тут 👉: url="https://t.me/admin"\n\n'
 
             "- Інші міста:\n"
             "  Нова Пошта\n\n"
 
             "💳 ОПЛАТА:\n\n"
-            "- Готівкою  або на карту по Кропивницькому\n\n"
+            "- Готівкою  або на карту по Город\n\n"
             "- Повна передоплата на Mono, Privat Bank при відправленні в інші міста"
         )
         bot.send_message(
@@ -396,7 +396,7 @@ def callback(call):
         markup.add(InlineKeyboardButton("Зробити замовлення", callback_data="catalog"))
         markup.add(InlineKeyboardButton("Запитати у адміна", callback_data="ask_mi"))
         markup.add(InlineKeyboardButton("До меню", callback_data="back"))
-        markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/kvitucha_mriya_info"))
+        markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/Канал"))
         bot.edit_message_text(
             "Ваша дія:",
             call.message.chat.id,
@@ -575,7 +575,7 @@ def process_quantity(message, user_id, prod):
         )
         markup.add(
             types.InlineKeyboardButton("Написати адміну", callback_data="ask_mi"),
-            types.InlineKeyboardButton("Назад до каналу", url="https://t.me/kvitucha_mriya_info")
+            types.InlineKeyboardButton("Назад до каналу", url="https://t.me/канал")
         )
 
         bot.send_message(message.chat.id, "Що робити далі?", reply_markup=markup)
@@ -601,7 +601,7 @@ def process_quantity(message, user_id, prod):
     markup.add(InlineKeyboardButton("Продовжити", callback_data="catalog"))
     markup.add(InlineKeyboardButton("Оформити", callback_data="show_cart"))
     markup.add(InlineKeyboardButton("До меню", callback_data="back"))
-    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/kvitucha_mriya_info"))
+    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/канал"))
 
     bot.send_message(message.chat.id, "Ваш вибір:", reply_markup=markup)
 
@@ -627,7 +627,7 @@ def show_cart(message):
     markup = types.InlineKeyboardMarkup()
     markup.add(types.InlineKeyboardButton("Оформити замовлення 🚀", callback_data=f"checkout_{user_id}"))
     markup.add(InlineKeyboardButton("До меню", callback_data="back"))
-    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/kvitucha_mriya_info"))
+    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/канал"))
 
 
     bot.send_message(message.message.chat.id, text, reply_markup=markup)
@@ -710,7 +710,7 @@ def checkout(call):
     markup.add(InlineKeyboardButton("Запитати у адміна", callback_data="ask_mi"))
     markup.add(InlineKeyboardButton("До меню", callback_data="back"))
     markup.add(InlineKeyboardButton("Каталог", callback_data="catalog"))
-    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/kvitucha_mriya_info"))
+    markup.add(InlineKeyboardButton("Назад до каналу", url="https://t.me/канал"))
     bot.send_message(call.message.chat.id, text, reply_markup=markup)
 
 
@@ -740,7 +740,7 @@ def any_message(message):
             InlineKeyboardButton("До меню", callback_data="back")
         )
         markup.add(InlineKeyboardButton("Запитати у адміна", callback_data="ask_mi"))
-        markup.add(InlineKeyboardButton(" Назад до каналу", url="https://t.me/kvitucha_mriya_info"))
+        markup.add(InlineKeyboardButton(" Назад до каналу", url="https://t.me/канал"))
         bot.send_message(message.chat.id, "Далі?", reply_markup=markup)
 
     #else:
